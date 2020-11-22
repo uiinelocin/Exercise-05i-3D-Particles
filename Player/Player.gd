@@ -11,6 +11,7 @@ var velocity = Vector3()
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -21,6 +22,13 @@ func _unhandled_input(event):
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("shoot"):
 		if $Pivot/RayCast.is_colliding():
+			var player = AudioStreamPlayer.new()
+			self.add_child(player)
+			player.stream = load("res://Assets/laser.wav")
+			player.play()
+			$Pivot/Laser.visible = not $Pivot/Laser.visible
 			var target = $Pivot/RayCast.get_collider()
 			if target.is_in_group("target"):
 				target.die()
+				yield(get_tree().create_timer(0.8),"timeout")
+				$Pivot/Laser.visible = not $Pivot/Laser.visible
