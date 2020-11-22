@@ -11,7 +11,7 @@ The blaster and target models are from the [Blaster Kit](https://kenney.nl/asset
 
 The skybox was downloaded from [HDRIhaven.com](https://hdrihaven.com/hdri/?c=indoor&h=empty_warehouse_01).
 
-Laser sound downloaded from https://freesound.org/people/bubaproducer/sounds/151022/ by bubaproducer
+Laser sound downloaded from [Freesound.org]https://freesound.org/people/bubaproducer/sounds/151022/ by bubaproducer
 
 ## References
 None
